@@ -6,6 +6,8 @@
     id<ViewControllerBehavior> behavior;
 }
 
+@property (nonatomic, retain) id<ViewControllerBehavior> behavior;
+
 + (ConditionalBehavior*)conditionalBehavior;
 - (id)withTarget:(id)tar;
 - (id)withSelector:(SEL)sel;

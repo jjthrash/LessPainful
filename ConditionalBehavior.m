@@ -2,6 +2,8 @@
 
 @implementation ConditionalBehavior
 
+@synthesize behavior;
+
 + (ConditionalBehavior*)conditionalBehavior {
     return [[[ConditionalBehavior alloc] init] autorelease];
 }
