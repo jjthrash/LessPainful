@@ -50,10 +50,11 @@
 
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:cellStyle reuseIdentifier:reuseID] autorelease];
-        cell.textLabel.text = label;
-        cell.detailTextLabel.text = detailLabel;
-        cell.accessoryType = accessoryType;
     }
+
+    cell.textLabel.text = label;
+    cell.detailTextLabel.text = detailLabel;
+    cell.accessoryType = accessoryType;
 
     return cell;
 }
