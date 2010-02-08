@@ -19,6 +19,8 @@
 
 - (id)initWithTarget:(id)tar selector:(SEL)sel;
 
+- (id)withTarget:(id)tar;
+- (id)withSelector:(SEL)sel;
 - (id)withAccessoryType:(UITableViewCellAccessoryType)type;
 - (id)withStyle:(UITableViewCellStyle)style;
 - (id)withLabel:(NSString*)label;

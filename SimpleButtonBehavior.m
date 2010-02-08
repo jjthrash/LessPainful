@@ -11,6 +11,16 @@
     return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
 }
 
+- (id)withTarget:(id)tar {
+    target = tar;
+    return self;
+}
+
+- (id)withSelector:(SEL)sel {
+    selector = sel;
+    return self;
+}
+
 - (id)withAccessoryType:(UITableViewCellAccessoryType)type {
     accessoryType = type;
     return self;
