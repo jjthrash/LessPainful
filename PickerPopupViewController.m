@@ -5,6 +5,8 @@
 
 @synthesize popup;
 @synthesize label;
+@synthesize delegate;
+@synthesize value;
 
 - (void)viewDidLoad {
     self.behaviors =
@@ -50,7 +52,7 @@
     [UIView commitAnimations];
 }
 
-- (void)cancel {
+- (void)dismissPopup {
     [UIView beginAnimations:@"popup" context:NULL];
     [UIView setAnimationDuration:0.25];
     [UIView setAnimationDelegate:self];
@@ -59,7 +61,10 @@
     self.popup.transform = CGAffineTransformIdentity;
 
     [UIView commitAnimations];
+}
 
+- (void)cancel {
+    [self dismissPopup];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -68,7 +73,8 @@
 }
 
 - (void)save {
-    //TODO emit
+    [self.delegate pickerPopupDidSave:self];
+    [self dismissPopup];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
