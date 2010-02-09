@@ -1,5 +1,9 @@
 #import "BehaviorDelegatedTableViewController.h"
 
+#define DECLARE_BUTTON_BEHAVIOR(name) \
+@interface name : SimpleButtonBehavior {} \
+@end
+
 @interface SimpleButtonBehavior : NSObject <ViewControllerBehavior> {
     NSString *label;
     NSString *detailLabel;
