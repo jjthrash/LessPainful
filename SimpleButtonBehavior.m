@@ -87,7 +87,7 @@
 }
 
 - (void)controller:(id)controller tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    [target performSelector:selector];
+    [target performSelector:selector withObject:self];
 }
 
 @end
