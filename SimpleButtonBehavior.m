@@ -6,6 +6,7 @@
 @synthesize detailLabel;
 @synthesize accessoryType;
 @synthesize cellStyle;
+@synthesize enabled;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
     return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
@@ -41,8 +42,16 @@
     return self;
 }
 
-- (id)initWithTarget:(id)tar selector:(SEL)sel {
+- (id)init {
     if (self = [super init]) {
+        self.enabled = YES;
+    }
+
+    return self;
+}
+
+- (id)initWithTarget:(id)tar selector:(SEL)sel {
+    if (self = [self init]) {
         target = [tar retain];
         selector = sel;
     }
@@ -62,6 +71,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:cellStyle reuseIdentifier:reuseID] autorelease];
     }
 
+    cell.textLabel.enabled = self.enabled;
     cell.textLabel.text = label;
     cell.detailTextLabel.text = detailLabel;
     cell.accessoryType = accessoryType;
@@ -70,7 +80,10 @@
 }
 
 - (NSIndexPath*)controller:(id)controller tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    return indexPath;
+    if (self.enabled)
+        return indexPath;
+    else
+        return nil;
 }
 
 - (void)controller:(id)controller tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {

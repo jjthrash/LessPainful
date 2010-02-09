@@ -10,6 +10,7 @@
     id target;
     SEL selector;
 
+    BOOL enabled;
     UITableViewCellAccessoryType accessoryType;
     UITableViewCellStyle cellStyle;
 }
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSString *detailLabel;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 @property (nonatomic, assign) UITableViewCellStyle cellStyle;
+@property (nonatomic, assign) BOOL enabled;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel;
 
