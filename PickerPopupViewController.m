@@ -42,7 +42,7 @@
     CGRect bounds = self.navigationController.view.bounds;
     CGRect popupFrame = self.popup.bounds;
     self.popup.frame = CGRectMake(0, bounds.size.height, popupFrame.size.width, popupFrame.size.height);
-    [self.navigationController.view addSubview:self.popup];
+    [self.parentViewController.view addSubview:self.popup];
 
     [self refreshData];
 
