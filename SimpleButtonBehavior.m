@@ -74,6 +74,7 @@
     cell.textLabel.enabled = self.enabled;
     cell.textLabel.text = label;
     cell.detailTextLabel.text = detailLabel;
+    cell.detailTextLabel.enabled = self.enabled;
     cell.accessoryType = accessoryType;
 
     return cell;
