@@ -10,6 +10,8 @@
     id target;
     SEL selector;
 
+    UIColor *textColor;
+
     BOOL enabled;
     UITableViewCellAccessoryType accessoryType;
     UITableViewCellStyle cellStyle;
@@ -20,6 +22,7 @@
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 @property (nonatomic, assign) UITableViewCellStyle cellStyle;
 @property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, retain) UIColor *textColor;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel;
 

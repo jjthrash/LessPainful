@@ -7,6 +7,7 @@
 @synthesize accessoryType;
 @synthesize cellStyle;
 @synthesize enabled;
+@synthesize textColor;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
     return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
@@ -76,6 +77,8 @@
     cell.detailTextLabel.text = detailLabel;
     cell.detailTextLabel.enabled = self.enabled;
     cell.accessoryType = accessoryType;
+    if (self.textColor)
+        cell.textLabel.textColor = self.textColor;
 
     return cell;
 }
