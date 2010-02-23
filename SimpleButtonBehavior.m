@@ -53,7 +53,7 @@
 
 - (id)initWithTarget:(id)tar selector:(SEL)sel {
     if (self = [self init]) {
-        target = [tar retain];
+        target = tar;
         selector = sel;
     }
 

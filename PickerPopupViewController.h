@@ -11,7 +11,7 @@
     id value;
 }
 
-@property (nonatomic, retain) id<PickerPopupViewControllerDelegate> delegate;
+@property (nonatomic, assign) id<PickerPopupViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) UIView *popup;
 @property (nonatomic, retain) id value;
