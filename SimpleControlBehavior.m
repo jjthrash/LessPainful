@@ -4,10 +4,16 @@
 
 - (id)initWithLabel:(NSString*)aLabel control:(UIControl*)aControl {
     if (self = [super init]) {
-        label = aLabel;
-        control = aControl;
+        label = [aLabel retain];
+        control = [aControl retain];
+        style = UITableViewCellStyleDefault;
     }
 
+    return self;
+}
+
+- (id)withStyle:(UITableViewCellStyle)aStyle {
+    style = aStyle;
     return self;
 }
 
@@ -20,7 +26,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseID];
 
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseID] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:reuseID] autorelease];
         cell.textLabel.text = label;
 
         control.center = CGPointMake(300 - control.frame.size.width / 2 - 10,
@@ -36,6 +42,12 @@
 }
 
 - (void)controller:(id)controller tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+}
+
+- (void)dealloc {
+    [label release];
+    [control release];
+    [super dealloc];
 }
 
 @end
