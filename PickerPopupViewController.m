@@ -52,6 +52,11 @@
     [UIView commitAnimations];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self dismissPopup];
+}
+
 - (void)dismissPopup {
     [UIView beginAnimations:@"popup" context:NULL];
     [UIView setAnimationDuration:0.25];
@@ -76,6 +81,14 @@
     [self.delegate pickerPopupDidSave:self];
     [self dismissPopup];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)dealloc {
+    [popup release];
+    [label release];
+    [value release];
+
+    [super dealloc];
 }
 
 @end
