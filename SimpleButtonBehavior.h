@@ -7,6 +7,7 @@
 @interface SimpleButtonBehavior : NSObject <ViewControllerBehavior> {
     NSString *label;
     NSString *detailLabel;
+    UIImage  *image;
     id target;
     SEL selector;
 
@@ -23,6 +24,7 @@
 @property (nonatomic, assign) UITableViewCellStyle cellStyle;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) UIImage *image;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel;
 
@@ -34,6 +36,7 @@
 - (id)withStyle:(UITableViewCellStyle)style;
 - (id)withLabel:(NSString*)label;
 - (id)withDetailLabel:(NSString*)detailLabel;
+- (id)withImage:(UIImage*)i;
 
 @end
 

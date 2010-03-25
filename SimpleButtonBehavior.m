@@ -8,6 +8,7 @@
 @synthesize cellStyle;
 @synthesize enabled;
 @synthesize textColor;
+@synthesize image;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
     return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
@@ -40,6 +41,11 @@
 
 - (id)withDetailLabel:(NSString*)aDetailLabel {
     detailLabel = [aDetailLabel retain];
+    return self;
+}
+
+- (id)withImage:(UIImage*)i {
+    image = [i retain];
     return self;
 }
 
@@ -79,6 +85,8 @@
     cell.accessoryType = accessoryType;
     if (self.textColor)
         cell.textLabel.textColor = self.textColor;
+    if (self.image)
+        cell.imageView.image = self.image;
 
     return cell;
 }
