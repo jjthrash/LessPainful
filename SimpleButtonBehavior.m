@@ -9,6 +9,7 @@
 @synthesize enabled;
 @synthesize textColor;
 @synthesize image;
+@synthesize textLabelFontSize;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
     return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
@@ -49,6 +50,11 @@
     return self;
 }
 
+- (id)withTextLabelFontSize:(float) size {
+    textLabelFontSize = size;
+    return self;
+}
+
 - (id)init {
     if (self = [super init]) {
         self.enabled = YES;
@@ -80,6 +86,7 @@
 
     cell.textLabel.enabled = self.enabled;
     cell.textLabel.text = label;
+    cell.textLabel.font = [cell.textLabel.font fontWithSize:textLabelFontSize];
     cell.detailTextLabel.text = detailLabel;
     cell.detailTextLabel.enabled = self.enabled;
     cell.accessoryType = accessoryType;

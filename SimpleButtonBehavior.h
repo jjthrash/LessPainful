@@ -11,6 +11,8 @@
     id target;
     SEL selector;
 
+    float textLabelFontSize;
+
     UIColor *textColor;
 
     BOOL enabled;
@@ -25,6 +27,7 @@
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, assign) float textLabelFontSize;
 
 + (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel;
 
@@ -37,6 +40,7 @@
 - (id)withLabel:(NSString*)label;
 - (id)withDetailLabel:(NSString*)detailLabel;
 - (id)withImage:(UIImage*)i;
+- (id)withTextLabelFontSize:(float)size;
 
 @end
 
