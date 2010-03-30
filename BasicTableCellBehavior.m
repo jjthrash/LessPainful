@@ -27,17 +27,17 @@
 }
 
 - (id)withLabel:(NSString*)aLabel {
-    label = [aLabel retain];
+    self.label = aLabel;
     return self;
 }
 
 - (id)withDetailLabel:(NSString*)aDetailLabel {
-    detailLabel = [aDetailLabel retain];
+    self.detailLabel = aDetailLabel;
     return self;
 }
 
 - (id)withImage:(UIImage*)i {
-    image = [i retain];
+    self.image = i;
     return self;
 }
 
@@ -52,7 +52,7 @@
 }
 
 - (id)withBackgroundImage:(UIImage*)i {
-    backgroundImage = [i retain];
+    self.backgroundImage = i;
     return self;
 }
 
@@ -96,6 +96,15 @@
 }
 
 - (void)controller:(id)controller tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
+}
+
+- (void)dealloc {
+    [label release];
+    [detailLabel release];
+    [image release];
+    [backgroundImage release];
+    [textColor release];
+    [super dealloc];
 }
 
 @end

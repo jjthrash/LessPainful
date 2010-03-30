@@ -1,13 +1,10 @@
 #import "BehaviorDelegatedTableViewController.h"
+#import "BasicTableCellBehavior.h"
 
-@interface SimpleControlBehavior : NSObject <ViewControllerBehavior> {
+@interface SimpleControlBehavior : BasicTableCellBehavior {
     UIControl *control;
-    NSString  *label;
-
-    UITableViewCellStyle style;
 }
 
 - (id)initWithLabel:(NSString*)aLabel control:(UIControl*)aControl;
-- (id)withStyle:(UITableViewCellStyle)style;
 
 @end
