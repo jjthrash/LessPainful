@@ -6,6 +6,7 @@
 @synthesize label;
 @synthesize detailLabel;
 @synthesize accessoryType;
+@synthesize accessoryView;
 @synthesize cellStyle;
 @synthesize textColor;
 @synthesize image;
@@ -18,6 +19,11 @@
 
 - (id)withAccessoryType:(UITableViewCellAccessoryType)type {
     accessoryType = type;
+    return self;
+}
+
+- (id)withAccessoryView:(UIView*)view {
+    self.accessoryView = view;
     return self;
 }
 
@@ -76,7 +82,10 @@
     cell.textLabel.text = label;
     cell.textLabel.font = [cell.textLabel.font fontWithSize:textLabelFontSize];
     cell.detailTextLabel.text = detailLabel;
-    cell.accessoryType = accessoryType;
+    if (self.accessoryView)
+        cell.accessoryView = self.accessoryView;
+    else
+        cell.accessoryType = accessoryType;
     if (self.textColor)
         cell.textLabel.textColor = self.textColor;
     if (self.image)
@@ -104,6 +113,7 @@
     [image release];
     [backgroundImage release];
     [textColor release];
+    [accessoryView release];
     [super dealloc];
 }
 
