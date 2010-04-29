@@ -1,7 +1,7 @@
-#import "BasicTableCellBehavior.h"
+#import "LPBasicTableCellBehavior.h"
 #import "UIViewHelpers.h"
 
-@implementation BasicTableCellBehavior
+@implementation LPBasicTableCellBehavior
 
 @synthesize label;
 @synthesize detailLabel;

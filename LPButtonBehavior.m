@@ -1,12 +1,12 @@
-#import "SimpleButtonBehavior.h"
+#import "LPButtonBehavior.h"
 #import "UIViewHelpers.h"
 
-@implementation SimpleButtonBehavior
+@implementation LPButtonBehavior
 
 @synthesize enabled;
 
-+ (SimpleButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
-    return [[[SimpleButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
++ (LPButtonBehavior*)buttonBehaviorWithTarget:(id)tar selector:(SEL)sel {
+    return [[[LPButtonBehavior alloc] initWithTarget:tar selector:sel] autorelease];
 }
 
 - (id)withTarget:(id)tar {

@@ -1,6 +1,6 @@
-#import "BehaviorDelegatedTableViewController.h"
+#import "LPBehaviorDelegatedTableViewController.h"
 
-@implementation BehaviorDelegatedTableViewController
+@implementation LPBehaviorDelegatedTableViewController
 
 @synthesize behaviors;
 

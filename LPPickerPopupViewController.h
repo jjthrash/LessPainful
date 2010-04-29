@@ -1,8 +1,8 @@
-#import "BehaviorDelegatedTableViewController.h"
+#import "LPBehaviorDelegatedTableViewController.h"
 
 @protocol PickerPopupViewControllerDelegate;
 
-@interface PickerPopupViewController : BehaviorDelegatedTableViewController {
+@interface LPPickerPopupViewController : LPBehaviorDelegatedTableViewController {
     NSString *label;
     UIView *popup;
 
@@ -21,5 +21,5 @@
 @end
 
 @protocol PickerPopupViewControllerDelegate <NSObject>
-- (void)pickerPopupDidSave:(PickerPopupViewController*)pickerPopup;
+- (void)pickerPopupDidSave:(LPPickerPopupViewController*)pickerPopup;
 @end

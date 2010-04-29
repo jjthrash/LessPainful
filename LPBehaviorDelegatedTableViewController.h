@@ -1,4 +1,4 @@
-@interface BehaviorDelegatedTableViewController : UITableViewController {
+@interface LPBehaviorDelegatedTableViewController : UITableViewController {
     NSArray *behaviors;
 }
 

@@ -1,6 +1,6 @@
-#import "BehaviorDelegatedTableViewController.h"
+#import "LPBehaviorDelegatedTableViewController.h"
 
-@interface BasicTableCellBehavior : NSObject <ViewControllerBehavior> {
+@interface LPBasicTableCellBehavior : NSObject <ViewControllerBehavior> {
     NSString *label;
     NSString *detailLabel;
     UIImage  *image;

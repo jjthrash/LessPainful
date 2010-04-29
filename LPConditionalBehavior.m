@@ -1,11 +1,11 @@
-#import "ConditionalBehavior.h"
+#import "LPConditionalBehavior.h"
 
-@implementation ConditionalBehavior
+@implementation LPConditionalBehavior
 
 @synthesize behavior;
 
-+ (ConditionalBehavior*)conditionalBehavior {
-    return [[[ConditionalBehavior alloc] init] autorelease];
++ (LPConditionalBehavior*)conditionalBehavior {
+    return [[[LPConditionalBehavior alloc] init] autorelease];
 }
 
 - (id)withTarget:(id)tar {

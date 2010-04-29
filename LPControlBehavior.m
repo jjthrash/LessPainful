@@ -1,6 +1,6 @@
-#import "SimpleControlBehavior.h"
+#import "LPControlBehavior.h"
 
-@implementation SimpleControlBehavior
+@implementation LPControlBehavior
 
 - (id)initWithLabel:(NSString*)aLabel control:(UIControl*)aControl {
     if (self = [super init]) {

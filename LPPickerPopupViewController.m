@@ -1,7 +1,7 @@
-#import "PickerPopupViewController.h"
-#import "SimpleButtonBehavior.h"
+#import "LPPickerPopupViewController.h"
+#import "LPButtonBehavior.h"
 
-@implementation PickerPopupViewController
+@implementation LPPickerPopupViewController
 
 @synthesize popup;
 @synthesize label;
@@ -12,7 +12,7 @@
     self.behaviors =
         [NSArray arrayWithObject:
             [NSArray arrayWithObject:
-                [[[SimpleButtonBehavior buttonBehaviorWithTarget:nil selector:nil]
+                [[[LPButtonBehavior buttonBehaviorWithTarget:nil selector:nil]
                     withLabel:@"Text"]
                     withStyle:UITableViewCellStyleValue2]]];
 
