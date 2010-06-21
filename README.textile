@@ -1,0 +1,12 @@
+h1. LessPainful
+Slightly less painful UI development for iPhone.
+
+h2. Features
+
+# LPBehaviorDelegatedTableViewController - Develop settings-style table views in a more intuitive way
+# LPPickerPopupViewController - develop a UIView to pop up (like a UIDatePicker or UIPickerView) and display a simple edit view
+
+h2. TODO
+
+# Kitchen Sink Sample app
+# Set up framework instead of requiring code drop-in
